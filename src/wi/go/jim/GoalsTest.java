@@ -3,18 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package wi.go.jim;
+import java.sql.*;
+import javax.swing.table.*;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane; 
 
 /**
  *
  * @author Farrel Haykal
  */
 public class GoalsTest extends javax.swing.JFrame {
-
+    java.sql.Connection conn;
     /**
      * Creates new form GoalsTest
      */
     public GoalsTest() {
         initComponents();
+        try {
+            conn = (java.sql.Connection)wi.go.jim.Koneksi.KoneksiDB();
+        } catch (SQLException ex) {
+            Logger.getLogger(GoalsTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -40,21 +51,21 @@ public class GoalsTest extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        setJenisGoals = new javax.swing.JComboBox<>();
+        NamaGoals = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        GoalsTarget = new javax.swing.JTextField();
+        DateStart = new com.toedter.calendar.JDateChooser();
         jLabel9 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        DateEnd = new com.toedter.calendar.JDateChooser();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         panelCustome1 = new Custome.PanelCustome();
         jLabel14 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Tombolsave = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TableGoals = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
 
         jButton2.setText("jButton1");
@@ -151,24 +162,36 @@ public class GoalsTest extends javax.swing.JFrame {
 
         jLabel7.setText("Createing Goals ");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        setJenisGoals.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Penurun berat badan", "Penambah tinggi", "Personal Record" }));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        NamaGoals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                NamaGoalsActionPerformed(evt);
             }
         });
 
         jLabel8.setText("Your Target ");
 
-        jTextField2.setText("                    | KG");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        GoalsTarget.setText("                    | KG");
+        GoalsTarget.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                GoalsTargetActionPerformed(evt);
+            }
+        });
+
+        DateStart.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                DateStartPropertyChange(evt);
             }
         });
 
         jLabel9.setText("Start_Date");
+
+        DateEnd.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                DateEndPropertyChange(evt);
+            }
+        });
 
         jLabel10.setText("End_Date");
 
@@ -187,13 +210,18 @@ public class GoalsTest extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("SAVE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        Tombolsave.setBackground(new java.awt.Color(51, 51, 51));
+        Tombolsave.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Tombolsave.setForeground(new java.awt.Color(255, 255, 255));
+        Tombolsave.setText("SAVE");
+        Tombolsave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TombolsaveMouseClicked(evt);
+            }
+        });
+        Tombolsave.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                TombolsavePropertyChange(evt);
             }
         });
 
@@ -205,7 +233,7 @@ public class GoalsTest extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tombolsave, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(96, 96, 96))
         );
         panelCustome1Layout.setVerticalGroup(
@@ -216,11 +244,11 @@ public class GoalsTest extends javax.swing.JFrame {
                 .addContainerGap(39, Short.MAX_VALUE))
             .addGroup(panelCustome1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Tombolsave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TableGoals.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -231,7 +259,12 @@ public class GoalsTest extends javax.swing.JFrame {
                 "Jenis ", "Nama", "Start_Date", "End_Date"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        TableGoals.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                TableGoalsPropertyChange(evt);
+            }
+        });
+        jScrollPane2.setViewportView(TableGoals);
 
         jLabel13.setText("Your Goals ");
 
@@ -242,29 +275,29 @@ public class GoalsTest extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(setJenisGoals, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GoalsTarget, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(108, 108, 108)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DateStart, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(panelCustome1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jTextField1))
+                    .addComponent(NamaGoals))
                 .addGap(110, 110, 110))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DateEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(167, 167, 167))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -291,11 +324,11 @@ public class GoalsTest extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(setJenisGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NamaGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -303,12 +336,12 @@ public class GoalsTest extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DateEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GoalsTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DateStart, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(72, 72, 72)
                 .addComponent(panelCustome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
+                .addGap(86, 86, 86))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -327,18 +360,78 @@ public class GoalsTest extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void GoalsTargetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoalsTargetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_GoalsTargetActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void NamaGoalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaGoalsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_NamaGoalsActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void DateStartPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_DateStartPropertyChange
+
+    }//GEN-LAST:event_DateStartPropertyChange
+
+    private void TableGoalsPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_TableGoalsPropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_TableGoalsPropertyChange
 
+    private void DateEndPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_DateEndPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DateEndPropertyChange
+
+    private void TombolsavePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_TombolsavePropertyChange
+        
+    }//GEN-LAST:event_TombolsavePropertyChange
+
+    private void TombolsaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TombolsaveMouseClicked
+        String jenisGoals = setJenisGoals.getSelectedItem().toString();
+        String namaGoals = NamaGoals.getText();
+        String dateStart = DateStart.getDateFormatString();
+        String dateEnd = DateEnd.getDateFormatString();
+        
+        try{
+            String query = "insert into dbgoals (Jenis, Nama, Start_Date, End_Date) VALUES (?,?,?,?)";
+            java.sql.PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, jenisGoals);
+            pst.setString(2, namaGoals);
+            pst.setString(3, dateStart);
+            pst.setString(4, dateEnd);
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Berhasil disimpan");
+            tampil_data();
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, " tidak berhasil disimpan");
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_TombolsaveMouseClicked
+
+    public void tampil_data(){
+        DefaultTableModel table = new  DefaultTableModel();
+        table.addColumn("Jenis");
+        table.addColumn("Nama");
+        table.addColumn("Start_Date");
+        table.addColumn("End_Date");
+        
+        try{
+            String sql = "select * from dbgoals"; 
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql); 
+            ResultSet rs = pst.executeQuery(sql);
+            while(rs.next()){
+                table.addColumn(new Object[]{
+                    rs.getString(1),
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getString(4),});
+            }
+            TableGoals.setModel(table);
+        }
+        catch (Exception e){
+            
+    }
+    }
+ 
     /**
      * @param args the command line arguments
      */
@@ -375,11 +468,13 @@ public class GoalsTest extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private com.toedter.calendar.JDateChooser DateEnd;
+    private com.toedter.calendar.JDateChooser DateStart;
+    private javax.swing.JTextField GoalsTarget;
+    private javax.swing.JTextField NamaGoals;
+    private javax.swing.JTable TableGoals;
+    private javax.swing.JButton Tombolsave;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -400,10 +495,8 @@ public class GoalsTest extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private Custome.PanelCustome panelCustome1;
     private Custome.PanelCustome panelCustome2;
+    private javax.swing.JComboBox<String> setJenisGoals;
     // End of variables declaration//GEN-END:variables
 }
