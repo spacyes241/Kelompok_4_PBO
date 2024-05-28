@@ -12,13 +12,13 @@ import javax.swing.JOptionPane;
  * @author Farrel Haykal
  */
 public class Koneksi {
-    private static Connection mySqlConnection;
+    private static Connection mySqlConnection = null;
+    private static String DB = "jbdc:mysql://localhost/tubespbo";
+    private static String user = "root";
+    private static String pass = "";
     public static Connection KoneksiDB()throws SQLException{
         if(mySqlConnection == null){
             try{
-                String DB = "jbdc:mysql://localhost:127.0.0.1/tubespbo"; 
-                String user = "root";
-                String pass = ""; 
                 DriverManager.registerDriver(new com.mysql.jdbc.Driver());
                 mySqlConnection = DriverManager.getConnection(DB,user,pass);    
             } catch (SQLException e){

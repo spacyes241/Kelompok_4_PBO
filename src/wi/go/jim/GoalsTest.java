@@ -6,6 +6,7 @@ package wi.go.jim;
 import java.sql.*;
 import javax.swing.table.*;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane; 
@@ -15,16 +16,23 @@ import javax.swing.JOptionPane;
  * @author Farrel Haykal
  */
 public class GoalsTest extends javax.swing.JFrame {
-    java.sql.Connection conn;
+    private static final String DB_URL = "jdbc:mysql://localhost/tubespbo";
+    private static final String USER = "root";
+    private static final String PASS = "";
+
+    private static Connection conn;
+    private static Statement stmt;
+    private static ResultSet rs;
     /**
      * Creates new form GoalsTest
      */
     public GoalsTest() {
         initComponents();
         try {
-            conn = (java.sql.Connection)wi.go.jim.Koneksi.KoneksiDB();
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement();
         } catch (SQLException ex) {
-            Logger.getLogger(GoalsTest.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
     }
 
@@ -160,7 +168,7 @@ public class GoalsTest extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/young-fitness-man-studio (1).jpg"))); // NOI18N
 
-        jLabel7.setText("Createing Goals ");
+        jLabel7.setText("Creating Goals ");
 
         setJenisGoals.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Penurun berat badan", "Penambah tinggi", "Personal Record" }));
 
@@ -241,7 +249,7 @@ public class GoalsTest extends javax.swing.JFrame {
             .addGroup(panelCustome1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel14)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelCustome1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Tombolsave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -387,16 +395,16 @@ public class GoalsTest extends javax.swing.JFrame {
     private void TombolsaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TombolsaveMouseClicked
         String jenisGoals = setJenisGoals.getSelectedItem().toString();
         String namaGoals = NamaGoals.getText();
-        String dateStart = DateStart.getDateFormatString();
-        String dateEnd = DateEnd.getDateFormatString();
-        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String startDateString = dateFormat.format(DateStart.getDate());
+        String endDateString = dateFormat.format(DateEnd.getDate());
         try{
             String query = "insert into dbgoals (Jenis, Nama, Start_Date, End_Date) VALUES (?,?,?,?)";
             java.sql.PreparedStatement pst = conn.prepareStatement(query);
             pst.setString(1, jenisGoals);
             pst.setString(2, namaGoals);
-            pst.setString(3, dateStart);
-            pst.setString(4, dateEnd);
+            pst.setString(3, startDateString);
+            pst.setString(4, endDateString);
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Berhasil disimpan");
             tampil_data();
@@ -413,7 +421,6 @@ public class GoalsTest extends javax.swing.JFrame {
         table.addColumn("Nama");
         table.addColumn("Start_Date");
         table.addColumn("End_Date");
-        
         try{
             String sql = "select * from dbgoals"; 
             java.sql.PreparedStatement pst = conn.prepareStatement(sql); 
