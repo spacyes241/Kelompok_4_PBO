@@ -34,7 +34,7 @@ public class Register extends javax.swing.JFrame {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            ex.getMessage();
         }
     }
 
@@ -54,7 +54,6 @@ public class Register extends javax.swing.JFrame {
         jCheckBox1 = new javax.swing.JCheckBox();
         NameTextField = new javax.swing.JTextField();
         jTextField17 = new javax.swing.JTextField();
-        JKTextField = new javax.swing.JTextField();
         EmailTextField = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField21 = new javax.swing.JTextField();
@@ -63,6 +62,7 @@ public class Register extends javax.swing.JFrame {
         PassTextField = new javax.swing.JTextField();
         Success = new javax.swing.JLabel();
         UmurSpinner = new javax.swing.JSpinner();
+        JKTextField = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
@@ -126,8 +126,6 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        JKTextField.setPreferredSize(new java.awt.Dimension(164, 94));
-
         EmailTextField.setPreferredSize(new java.awt.Dimension(164, 94));
 
         jTextField6.setBackground(new java.awt.Color(204, 204, 204));
@@ -158,36 +156,44 @@ public class Register extends javax.swing.JFrame {
 
         PassTextField.setPreferredSize(new java.awt.Dimension(164, 94));
 
+        JKTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan", " " }));
+        JKTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JKTextFieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(55, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
-                            .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JKTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(EmailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PassTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(UmurSpinner))
-                        .addGap(55, 55, 55))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Success, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(22, 22, 22)))
-                        .addGap(179, 179, 179))))
+                    .addComponent(JKTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(Success, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(22, 22, 22)))
+                            .addGap(179, 179, 179))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jCheckBox1)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
+                                .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EmailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(PassTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(UmurSpinner))
+                            .addGap(55, 55, 55)))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,8 +209,8 @@ public class Register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JKTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(JKTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -464,26 +470,30 @@ public class Register extends javax.swing.JFrame {
 
     private void ButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveActionPerformed
             String Nama = NameTextField.getText(); 
-            int umur = (Integer) UmurSpinner.getValue();
-            String JenisK = JKTextField.getText();
+            String umur = UmurSpinner.getValue().toString();
+            String JenisK = JKTextField.getSelectedItem().toString();
             String Email = EmailTextField.getText();
             String Notelpon = NoTextField.getText();
             String password = PassTextField.getText();
-            
-               try {
-        // Sesuaikan query dengan nama kolom dalam tabel database Anda
-        String query = "INSERT INTO dbregister (Nama, Umur, JenisKelamin, Email, NoTelpon, Password) VALUES (Nama, umur, JenisK, Email, Notelpon, password)";
-        java.sql.PreparedStatement pst = conn.prepareStatement(query);
-
-        // Eksekusi query
-        pst.executeUpdate();
-        JOptionPane.showMessageDialog(null, "Berhasil disimpan");
+        try {
+            // Sesuaikan query dengan nama kolom dalam tabel database Anda
+            String query = "INSERT INTO dbregister (Nama, Umur, JenisK, Email, Tlpn, Password) VALUES (?, ?, ?, ?, ?, ?)";
+            java.sql.PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, Nama);
+            pst.setString(2, umur);
+            pst.setString(3, JenisK);
+            pst.setString(4, Email);
+            pst.setString(5, Notelpon);
+            pst.setString(6, password);
+            // Eksekusi query
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Berhasil disimpan");
         
-        // Panggil metode untuk menampilkan data (jika ada)
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Tidak berhasil disimpan");
-        System.out.println(e.getMessage());
-    }      
+            // Panggil metode untuk menampilkan data (jika ada)
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Tidak berhasil disimpan");
+            System.out.println(e.getMessage());
+        }      
     }//GEN-LAST:event_ButtonSaveActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -497,6 +507,10 @@ public class Register extends javax.swing.JFrame {
     private void NameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NameTextFieldActionPerformed
+
+    private void JKTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JKTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JKTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -539,7 +553,7 @@ public class Register extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonSave;
     private javax.swing.JTextField EmailTextField;
-    private javax.swing.JTextField JKTextField;
+    private javax.swing.JComboBox<String> JKTextField;
     private javax.swing.JTextField NameTextField;
     private javax.swing.JTextField NoTextField;
     private javax.swing.JTextField PassTextField;

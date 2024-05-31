@@ -47,6 +47,8 @@ public class GoalsTest extends javax.swing.JFrame {
 
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -88,6 +90,8 @@ public class GoalsTest extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 58, Short.MAX_VALUE)
         );
+
+        jScrollPane3.setViewportView(jTree1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -180,7 +184,6 @@ public class GoalsTest extends javax.swing.JFrame {
 
         jLabel8.setText("Your Target ");
 
-        GoalsTarget.setText("                    | KG");
         GoalsTarget.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GoalsTargetActionPerformed(evt);
@@ -246,13 +249,13 @@ public class GoalsTest extends javax.swing.JFrame {
 
         TableGoals.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Jenis ", "Nama", "Start_Date", "End_Date"
+                "Jenis ", "Nama", "Target", "Start_Date", "End_Date"
             }
         ));
         TableGoals.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -277,9 +280,9 @@ public class GoalsTest extends javax.swing.JFrame {
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(GoalsTarget, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(108, 108, 108)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GoalsTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(62, 62, 62)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(panelCustome1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -333,13 +336,10 @@ public class GoalsTest extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jLabel9)
                             .addComponent(jLabel10))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(GoalsTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(DateEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(DateEnd, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                            .addComponent(GoalsTarget)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(133, 133, 133)
                         .addComponent(DateStart, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -397,16 +397,18 @@ public class GoalsTest extends javax.swing.JFrame {
     private void TombolsaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TombolsaveMouseClicked
         String jenisGoals = setJenisGoals.getSelectedItem().toString();
         String namaGoals = NamaGoals.getText();
+        String Target = GoalsTarget.getText();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String startDateString = dateFormat.format(DateStart.getDate());
         String endDateString = dateFormat.format(DateEnd.getDate());
         try{
-            String query = "insert into dbgoals (Jenis, Nama, Start_Date, End_Date) VALUES (?,?,?,?)";
+            String query = "insert into dbgoals (Jenis, Nama, Target, Start_Date, End_Date) VALUES (?,?,?,?,?)";
             java.sql.PreparedStatement pst = conn.prepareStatement(query);
             pst.setString(1, jenisGoals);
             pst.setString(2, namaGoals);
-            pst.setString(3, startDateString);
-            pst.setString(4, endDateString);
+            pst.setString(3, Target);
+            pst.setString(4, startDateString);
+            pst.setString(5, endDateString);
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Berhasil disimpan");
             tampil_data();
@@ -417,29 +419,34 @@ public class GoalsTest extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_TombolsaveMouseClicked
 
-    public void tampil_data(){
-        DefaultTableModel table = new  DefaultTableModel();
-        table.addColumn("Jenis");
-        table.addColumn("Nama");
-        table.addColumn("Start_Date");
-        table.addColumn("End_Date");
-        try{
-            String sql = "select * from dbgoals"; 
-            java.sql.PreparedStatement pst = conn.prepareStatement(sql); 
-            ResultSet rs = pst.executeQuery(sql);
-            while(rs.next()){
-                table.addColumn(new Object[]{
-                    rs.getString(1),
-                    rs.getString(2),
-                    rs.getString(3),
-                    rs.getString(4),});
-            }
-            TableGoals.setModel(table);
+ public void tampil_data() {
+    DefaultTableModel table = new DefaultTableModel();
+    table.addColumn("Jenis");
+    table.addColumn("Nama");
+    table.addColumn("Target");
+    table.addColumn("Start_Date");
+    table.addColumn("End_Date");
+    
+    try {
+        String sql = "SELECT * FROM dbgoals"; 
+        java.sql.PreparedStatement pst = conn.prepareStatement(sql); 
+        ResultSet rs = pst.executeQuery();
+        
+        while (rs.next()) {
+            table.addRow(new Object[]{
+                rs.getString(1),
+                rs.getString(2),
+                rs.getString(3),
+                rs.getString(4),
+                rs.getString(5)
+            });
         }
-        catch (Exception e){
-            
+        TableGoals.setModel(table);
+    } catch (Exception e) {
+        e.printStackTrace(); // Menampilkan stack trace kesalahan
     }
-    }
+}
+
  
     /**
      * @param args the command line arguments
@@ -504,6 +511,8 @@ public class GoalsTest extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTree jTree1;
     private Custome.PanelCustome panelCustome1;
     private Custome.PanelCustome panelCustome2;
     private javax.swing.JComboBox<String> setJenisGoals;
