@@ -335,8 +335,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String email = EmailField.getText();
-   String password = new String(PassField.getPassword());
+    String email = EmailField.getText();
+    String password = new String(PassField.getPassword());
     
     try {
         // Query untuk memeriksa apakah email dan password cocok
