@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
  * @author RAFLI
  */
 public class Register extends javax.swing.JFrame {
+
     private static final String DB_URL = "jdbc:mysql://localhost/tubespbo";
     private static final String USER = "root";
     private static final String PASS = "";
@@ -25,6 +26,7 @@ public class Register extends javax.swing.JFrame {
     private static Connection conn;
     private static Statement stmt;
     private static ResultSet rs;
+
     /**
      * Creates new form NewJFrame
      */
@@ -156,7 +158,7 @@ public class Register extends javax.swing.JFrame {
 
         PassTextField.setPreferredSize(new java.awt.Dimension(164, 94));
 
-        JKTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan", " " }));
+        JKTextField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
         JKTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JKTextFieldActionPerformed(evt);
@@ -225,7 +227,7 @@ public class Register extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Success, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                .addComponent(Success, javax.swing.GroupLayout.DEFAULT_SIZE, 12, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
@@ -340,13 +342,18 @@ public class Register extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setPreferredSize(new java.awt.Dimension(598, 963));
 
         jButton2.setText("Masuk");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -376,7 +383,7 @@ public class Register extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -469,12 +476,12 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void ButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveActionPerformed
-            String Nama = NameTextField.getText(); 
-            String umur = UmurSpinner.getValue().toString();
-            String JenisK = JKTextField.getSelectedItem().toString();
-            String Email = EmailTextField.getText();
-            String Notelpon = NoTextField.getText();
-            String password = PassTextField.getText();
+        String Nama = NameTextField.getText();
+        String umur = UmurSpinner.getValue().toString();
+        String JenisK = JKTextField.getSelectedItem().toString();
+        String Email = EmailTextField.getText();
+        String Notelpon = NoTextField.getText();
+        String password = PassTextField.getText();
         try {
             // Sesuaikan query dengan nama kolom dalam tabel database Anda
             String query = "INSERT INTO dbregister (Nama, Umur, JenisK, Email, Tlpn, Password) VALUES (?, ?, ?, ?, ?, ?)";
@@ -488,12 +495,12 @@ public class Register extends javax.swing.JFrame {
             // Eksekusi query
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Berhasil disimpan");
-        
+
             // Panggil metode untuk menampilkan data (jika ada)
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Tidak berhasil disimpan");
             System.out.println(e.getMessage());
-        }      
+        }
     }//GEN-LAST:event_ButtonSaveActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -511,6 +518,12 @@ public class Register extends javax.swing.JFrame {
     private void JKTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JKTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JKTextFieldActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        Login Logincoy = new Login();
+        Logincoy.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
