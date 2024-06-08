@@ -87,11 +87,12 @@ public class JadwalTrainer extends javax.swing.JFrame {
         jamFill = new javax.swing.JLabel();
         editButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         panelCustome3 = new Custome.PanelCustome();
-        jLabel16 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         addButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
 
@@ -169,14 +170,7 @@ public class JadwalTrainer extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setText("jLabel1");
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel7.setText("jLabel1");
-
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel8.setText("LOGO");
 
         panelCustome3.setBackground(new java.awt.Color(255, 255, 255));
         panelCustome3.setRoundBottomLeft(40);
@@ -184,25 +178,47 @@ public class JadwalTrainer extends javax.swing.JFrame {
         panelCustome3.setRoundTopLeft(40);
         panelCustome3.setRoundTopRight(40);
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel16.setText("USER ");
+        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jButton6.setText("Trainer");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCustome3Layout = new javax.swing.GroupLayout(panelCustome3);
         panelCustome3.setLayout(panelCustome3Layout);
         panelCustome3Layout.setHorizontalGroup(
             panelCustome3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCustome3Layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addComponent(jLabel16)
-                .addGap(68, 68, 68))
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addGap(53, 53, 53))
         );
         panelCustome3Layout.setVerticalGroup(
             panelCustome3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCustome3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel16)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
         );
+
+        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jButton7.setText("Dashboard");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jButton8.setText("Jadwal ");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Logo.jpg"))); // NOI18N
+        jLabel5.setText("LOGO");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -211,27 +227,27 @@ public class JadwalTrainer extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(80, 80, 80)
-                .addComponent(jLabel6)
-                .addGap(90, 90, 90)
+                .addComponent(jButton7)
+                .addGap(43, 43, 43)
+                .addComponent(jButton8)
+                .addGap(38, 38, 38)
                 .addComponent(panelCustome3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6))
-                .addGap(53, 53, 53))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(panelCustome3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(jButton7)
+                        .addComponent(jButton8)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -324,7 +340,7 @@ public class JadwalTrainer extends javax.swing.JFrame {
                             .addComponent(addButton)
                             .addComponent(editButton)
                             .addComponent(deleteButton))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         pack();
@@ -383,6 +399,18 @@ public class JadwalTrainer extends javax.swing.JFrame {
         deleteButton.setVisible(false);
     }//GEN-LAST:event_deleteButtonMouseClicked
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -410,6 +438,8 @@ public class JadwalTrainer extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -424,9 +454,10 @@ public class JadwalTrainer extends javax.swing.JFrame {
     private javax.swing.JButton deleteButton;
     private javax.swing.JLabel durasiFill;
     private javax.swing.JButton editButton;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
