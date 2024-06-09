@@ -35,10 +35,10 @@ public class TrainingGuide extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         panelCustome2 = new Custome.PanelCustome();
         jLabel15 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        buttonMaps = new javax.swing.JButton();
+        buttonSchedule = new javax.swing.JButton();
+        buttonGoals = new javax.swing.JButton();
+        buttonTrainGuide = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -219,26 +219,31 @@ public class TrainingGuide extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton5.setText("Maps");
-
-        jButton7.setText("Schedule");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        buttonMaps.setText("Maps");
+        buttonMaps.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                buttonMapsActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Goals");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonSchedule.setText("Schedule");
+        buttonSchedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                buttonScheduleActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Training Guide");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        buttonGoals.setText("Goals");
+        buttonGoals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                buttonGoalsActionPerformed(evt);
+            }
+        });
+
+        buttonTrainGuide.setText("Training Guide");
+        buttonTrainGuide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTrainGuideActionPerformed(evt);
             }
         });
 
@@ -250,13 +255,13 @@ public class TrainingGuide extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(buttonTrainGuide)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonMaps, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7)
+                .addComponent(buttonSchedule)
                 .addGap(11, 11, 11)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -267,10 +272,10 @@ public class TrainingGuide extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton6)
-                        .addComponent(jButton5)
-                        .addComponent(jButton7)
-                        .addComponent(jButton8))
+                        .addComponent(buttonTrainGuide)
+                        .addComponent(buttonMaps)
+                        .addComponent(buttonSchedule)
+                        .addComponent(buttonGoals))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5)))
@@ -337,7 +342,7 @@ public class TrainingGuide extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel38.setBackground(new java.awt.Color(255, 255, 255));
@@ -387,7 +392,7 @@ public class TrainingGuide extends javax.swing.JFrame {
                     .addComponent(jLabel65))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel63)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel41.setBackground(new java.awt.Color(255, 255, 255));
@@ -437,7 +442,7 @@ public class TrainingGuide extends javax.swing.JFrame {
                     .addComponent(jLabel100))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel101)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel43.setBackground(new java.awt.Color(255, 255, 255));
@@ -486,7 +491,7 @@ public class TrainingGuide extends javax.swing.JFrame {
                     .addComponent(jLabel60))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel62)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel44.setBackground(new java.awt.Color(255, 255, 255));
@@ -536,7 +541,7 @@ public class TrainingGuide extends javax.swing.JFrame {
                     .addComponent(jLabel81))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel79)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel45.setBackground(new java.awt.Color(255, 255, 255));
@@ -586,7 +591,7 @@ public class TrainingGuide extends javax.swing.JFrame {
                     .addComponent(jLabel69))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel67)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel70.setBackground(new java.awt.Color(255, 255, 255));
@@ -635,7 +640,7 @@ public class TrainingGuide extends javax.swing.JFrame {
                     .addComponent(jLabel53))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel54)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel74.setBackground(new java.awt.Color(255, 255, 255));
@@ -685,7 +690,7 @@ public class TrainingGuide extends javax.swing.JFrame {
                     .addComponent(jLabel89))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel87)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -700,7 +705,7 @@ public class TrainingGuide extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel41, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel70, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1586,17 +1591,31 @@ public class TrainingGuide extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void buttonScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScheduleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        Jadwal jadwal = new Jadwal();
+        jadwal.show();
+        dispose();
+    }//GEN-LAST:event_buttonScheduleActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void buttonGoalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGoalsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+        GoalsTest goals = new GoalsTest();
+        goals.show();
+        dispose();
+    }//GEN-LAST:event_buttonGoalsActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void buttonTrainGuideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTrainGuideActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        TrainingGuide trainGuide = new TrainingGuide();
+    }//GEN-LAST:event_buttonTrainGuideActionPerformed
+
+    private void buttonMapsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMapsActionPerformed
+        // TODO add your handling code here:
+        Maps maps = new Maps();
+        maps.show();
+        dispose();
+    }//GEN-LAST:event_buttonMapsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1635,10 +1654,10 @@ public class TrainingGuide extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton buttonGoals;
+    private javax.swing.JButton buttonMaps;
+    private javax.swing.JButton buttonSchedule;
+    private javax.swing.JButton buttonTrainGuide;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;

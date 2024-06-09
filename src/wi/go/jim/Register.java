@@ -71,10 +71,10 @@ public class Register extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         panelCustome2 = new Custome.PanelCustome();
         jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        buttonMaps = new javax.swing.JButton();
+        buttonSchedule = new javax.swing.JButton();
+        buttonGoals = new javax.swing.JButton();
+        buttonTrainGuide = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -226,7 +226,7 @@ public class Register extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Success, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                .addComponent(Success, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
@@ -270,7 +270,7 @@ public class Register extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -312,30 +312,30 @@ public class Register extends javax.swing.JFrame {
             .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jButton5.setText("Maps");
+        buttonMaps.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        buttonMaps.setText("Maps");
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jButton7.setText("Schedule");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        buttonSchedule.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        buttonSchedule.setText("Schedule");
+        buttonSchedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                buttonScheduleActionPerformed(evt);
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jButton8.setText("Goals");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonGoals.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        buttonGoals.setText("Goals");
+        buttonGoals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                buttonGoalsActionPerformed(evt);
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jButton6.setText("Training Guide");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        buttonTrainGuide.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        buttonTrainGuide.setText("Training Guide");
+        buttonTrainGuide.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                buttonTrainGuideActionPerformed(evt);
             }
         });
 
@@ -347,13 +347,13 @@ public class Register extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 577, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(buttonTrainGuide)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonMaps, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7)
+                .addComponent(buttonSchedule)
                 .addGap(11, 11, 11)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50))
@@ -365,10 +365,10 @@ public class Register extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton6)
-                        .addComponent(jButton5)
-                        .addComponent(jButton7)
-                        .addComponent(jButton8)
+                        .addComponent(buttonTrainGuide)
+                        .addComponent(buttonMaps)
+                        .addComponent(buttonSchedule)
+                        .addComponent(buttonGoals)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(42, 42, 42))
         );
@@ -497,17 +497,20 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void buttonScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScheduleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_buttonScheduleActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void buttonGoalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGoalsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+        GoalsTest goals = new GoalsTest();
+        goals.show();
+        dispose();
+    }//GEN-LAST:event_buttonGoalsActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void buttonTrainGuideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTrainGuideActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_buttonTrainGuideActionPerformed
 
     /**
      * @param args the command line arguments
@@ -556,12 +559,12 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JTextField PassTextField;
     private javax.swing.JLabel Success;
     private javax.swing.JSpinner UmurSpinner;
+    private javax.swing.JButton buttonGoals;
+    private javax.swing.JButton buttonMaps;
+    private javax.swing.JButton buttonSchedule;
+    private javax.swing.JButton buttonTrainGuide;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

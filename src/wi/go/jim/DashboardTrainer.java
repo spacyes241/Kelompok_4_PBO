@@ -31,7 +31,6 @@ public class DashboardTrainer extends javax.swing.JFrame {
         panelCustome1 = new Custome.PanelCustome();
         panelCustome3 = new Custome.PanelCustome();
         panelCustome4 = new Custome.PanelCustome();
-        jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -43,8 +42,8 @@ public class DashboardTrainer extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         panelCustome2 = new Custome.PanelCustome();
         jButton2 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        buttonDashboard = new javax.swing.JButton();
+        buttonJadwal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,31 +61,15 @@ public class DashboardTrainer extends javax.swing.JFrame {
         panelCustome4.setRoundTopLeft(60);
         panelCustome4.setRoundTopRight(60);
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("JOIN MEMBERSHIP");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelCustome4Layout = new javax.swing.GroupLayout(panelCustome4);
         panelCustome4.setLayout(panelCustome4Layout);
         panelCustome4Layout.setHorizontalGroup(
             panelCustome4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCustome4Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+            .addGap(0, 219, Short.MAX_VALUE)
         );
         panelCustome4Layout.setVerticalGroup(
             panelCustome4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCustome4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 58, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout panelCustome3Layout = new javax.swing.GroupLayout(panelCustome3);
@@ -236,17 +219,17 @@ public class DashboardTrainer extends javax.swing.JFrame {
             .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jButton7.setText("Dashboard");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        buttonDashboard.setText("Dashboard");
+        buttonDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                buttonDashboardActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Jadwal");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonJadwal.setText("Jadwal");
+        buttonJadwal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                buttonJadwalActionPerformed(evt);
             }
         });
 
@@ -258,9 +241,9 @@ public class DashboardTrainer extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
-                .addComponent(jButton7)
+                .addComponent(buttonDashboard)
                 .addGap(19, 19, 19)
-                .addComponent(jButton8)
+                .addComponent(buttonJadwal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -272,8 +255,8 @@ public class DashboardTrainer extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8))
+                            .addComponent(buttonDashboard)
+                            .addComponent(buttonJadwal))
                         .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -346,21 +329,20 @@ public class DashboardTrainer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void buttonDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDashboardActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_buttonDashboardActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void buttonJadwalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJadwalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+        JadwalTrainer jadwal = new JadwalTrainer();
+        jadwal.show();
+        dispose();
+    }//GEN-LAST:event_buttonJadwalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -405,10 +387,9 @@ public class DashboardTrainer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton buttonDashboard;
+    private javax.swing.JButton buttonJadwal;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
