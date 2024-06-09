@@ -31,7 +31,7 @@ public class Dashboard extends javax.swing.JFrame {
         panelCustome1 = new Custome.PanelCustome();
         panelCustome3 = new Custome.PanelCustome();
         panelCustome4 = new Custome.PanelCustome();
-        jButton1 = new javax.swing.JButton();
+        buttonJoinMember = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -43,10 +43,10 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         panelCustome2 = new Custome.PanelCustome();
         jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        buttonMaps = new javax.swing.JButton();
+        buttonSchedule = new javax.swing.JButton();
+        buttonGoals = new javax.swing.JButton();
+        buttonTrainGuide = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,13 +64,13 @@ public class Dashboard extends javax.swing.JFrame {
         panelCustome4.setRoundTopLeft(60);
         panelCustome4.setRoundTopRight(60);
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("JOIN MEMBERSHIP");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonJoinMember.setBackground(new java.awt.Color(0, 204, 204));
+        buttonJoinMember.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        buttonJoinMember.setForeground(new java.awt.Color(255, 255, 255));
+        buttonJoinMember.setText("JOIN MEMBERSHIP");
+        buttonJoinMember.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonJoinMemberActionPerformed(evt);
             }
         });
 
@@ -80,14 +80,14 @@ public class Dashboard extends javax.swing.JFrame {
             panelCustome4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCustome4Layout.createSequentialGroup()
                 .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonJoinMember, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
         );
         panelCustome4Layout.setVerticalGroup(
             panelCustome4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCustome4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(buttonJoinMember, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -238,26 +238,31 @@ public class Dashboard extends javax.swing.JFrame {
             .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jButton5.setText("Maps");
-
-        jButton7.setText("Schedule");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        buttonMaps.setText("Maps");
+        buttonMaps.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                buttonMapsActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Goals");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        buttonSchedule.setText("Schedule");
+        buttonSchedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                buttonScheduleActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Training Guide");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        buttonGoals.setText("Goals");
+        buttonGoals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                buttonGoalsActionPerformed(evt);
+            }
+        });
+
+        buttonTrainGuide.setText("Training Guide");
+        buttonTrainGuide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTrainGuideActionPerformed(evt);
             }
         });
 
@@ -269,13 +274,13 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(jButton6)
+                .addComponent(buttonTrainGuide)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonMaps, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7)
+                .addComponent(buttonSchedule)
                 .addGap(11, 11, 11)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -287,10 +292,10 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton6)
-                            .addComponent(jButton5)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8))
+                            .addComponent(buttonTrainGuide)
+                            .addComponent(buttonMaps)
+                            .addComponent(buttonSchedule)
+                            .addComponent(buttonGoals))
                         .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -363,25 +368,44 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonJoinMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJoinMemberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Membership membership = new Membership();
+        membership.show();
+        dispose();
+    }//GEN-LAST:event_buttonJoinMemberActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void buttonScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScheduleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        Jadwal jadwal = new Jadwal();
+        jadwal.show();
+        dispose();
+    }//GEN-LAST:event_buttonScheduleActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void buttonGoalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGoalsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+        GoalsTest goals = new GoalsTest();
+        goals.show();
+        dispose();
+    }//GEN-LAST:event_buttonGoalsActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void buttonTrainGuideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTrainGuideActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        TrainingGuide trainGuide = new TrainingGuide();
+        trainGuide.show();
+        dispose();
+    }//GEN-LAST:event_buttonTrainGuideActionPerformed
+
+    private void buttonMapsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMapsActionPerformed
+        // TODO add your handling code here:
+        Maps maps = new Maps();
+        maps.show();
+        dispose();
+    }//GEN-LAST:event_buttonMapsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -422,12 +446,12 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton buttonGoals;
+    private javax.swing.JButton buttonJoinMember;
+    private javax.swing.JButton buttonMaps;
+    private javax.swing.JButton buttonSchedule;
+    private javax.swing.JButton buttonTrainGuide;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

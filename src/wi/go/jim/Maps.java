@@ -29,10 +29,10 @@ public class Maps extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         panelCustome2 = new Custome.PanelCustome();
         jLabel15 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        buttonTrainGuide = new javax.swing.JButton();
+        buttonMaps = new javax.swing.JButton();
+        buttonSchedule = new javax.swing.JButton();
+        buttonGoals = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -111,26 +111,26 @@ public class Maps extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Training Guide");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonTrainGuide.setText("Training Guide");
+        buttonTrainGuide.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonTrainGuideActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Maps");
+        buttonMaps.setText("Maps");
 
-        jButton3.setText("Schedule");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        buttonSchedule.setText("Schedule");
+        buttonSchedule.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                buttonScheduleActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Goals");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonGoals.setText("Goals");
+        buttonGoals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                buttonGoalsActionPerformed(evt);
             }
         });
 
@@ -145,13 +145,13 @@ public class Maps extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(buttonTrainGuide)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonMaps, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
+                .addComponent(buttonSchedule)
                 .addGap(11, 11, 11)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -162,10 +162,10 @@ public class Maps extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2)
-                        .addComponent(jButton3)
-                        .addComponent(jButton4)
+                        .addComponent(buttonTrainGuide)
+                        .addComponent(buttonMaps)
+                        .addComponent(buttonSchedule)
+                        .addComponent(buttonGoals)
                         .addComponent(jLabel5))
                     .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
@@ -708,17 +708,26 @@ public class Maps extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonTrainGuideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTrainGuideActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        TrainingGuide trainGuide = new TrainingGuide();
+        trainGuide.show();
+        dispose();
+    }//GEN-LAST:event_buttonTrainGuideActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void buttonScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScheduleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        Jadwal jadwal = new Jadwal();
+        jadwal.show();
+        dispose();
+    }//GEN-LAST:event_buttonScheduleActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void buttonGoalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGoalsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        GoalsTest goals = new GoalsTest();
+        goals.show();
+        dispose();
+    }//GEN-LAST:event_buttonGoalsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -757,10 +766,10 @@ public class Maps extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton buttonGoals;
+    private javax.swing.JButton buttonMaps;
+    private javax.swing.JButton buttonSchedule;
+    private javax.swing.JButton buttonTrainGuide;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;

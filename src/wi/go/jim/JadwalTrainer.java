@@ -90,7 +90,7 @@ public class JadwalTrainer extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         panelCustome3 = new Custome.PanelCustome();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        buttonDashboard = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         addButton = new javax.swing.JButton();
@@ -200,11 +200,11 @@ public class JadwalTrainer extends javax.swing.JFrame {
             .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
         );
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jButton7.setText("Dashboard");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        buttonDashboard.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        buttonDashboard.setText("Dashboard");
+        buttonDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                buttonDashboardActionPerformed(evt);
             }
         });
 
@@ -230,7 +230,7 @@ public class JadwalTrainer extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7)
+                .addComponent(buttonDashboard)
                 .addGap(43, 43, 43)
                 .addComponent(jButton8)
                 .addGap(38, 38, 38)
@@ -245,7 +245,7 @@ public class JadwalTrainer extends javax.swing.JFrame {
                     .addComponent(panelCustome3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
-                        .addComponent(jButton7)
+                        .addComponent(buttonDashboard)
                         .addComponent(jButton8)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(36, Short.MAX_VALUE))
@@ -403,9 +403,12 @@ public class JadwalTrainer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void buttonDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDashboardActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        DashboardTrainer dbTrainer = new DashboardTrainer();
+        dbTrainer.show();
+        dispose();
+    }//GEN-LAST:event_buttonDashboardActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
@@ -451,11 +454,11 @@ public class JadwalTrainer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
+    private javax.swing.JButton buttonDashboard;
     private javax.swing.JButton deleteButton;
     private javax.swing.JLabel durasiFill;
     private javax.swing.JButton editButton;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
