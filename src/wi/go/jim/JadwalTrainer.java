@@ -400,7 +400,9 @@ public class JadwalTrainer extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteButtonMouseClicked
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        ButtonLogout addForm = new ButtonLogout(JadwalTrainer.this, true);
+        addForm.setVisible(true); 
+          dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void buttonDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDashboardActionPerformed

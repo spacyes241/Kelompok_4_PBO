@@ -220,6 +220,11 @@ public class Jadwal extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Logo.jpg"))); // NOI18N
         jLabel5.setText("LOGO");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         panelCustome2.setBackground(new java.awt.Color(255, 255, 255));
         panelCustome2.setRoundBottomLeft(40);
@@ -500,11 +505,15 @@ public class Jadwal extends javax.swing.JFrame {
     }//GEN-LAST:event_listJadwalUserMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+    ButtonLogout addForm = new ButtonLogout(Jadwal.this, true);
+        addForm.setVisible(true); 
+          dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void buttonScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScheduleActionPerformed
-        // TODO add your handling code here:
+         Jadwal jadwal = new Jadwal();
+        jadwal.show();
+        dispose();
     }//GEN-LAST:event_buttonScheduleActionPerformed
 
     private void buttonGoalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGoalsActionPerformed
@@ -531,6 +540,12 @@ public class Jadwal extends javax.swing.JFrame {
         maps.show();
         dispose();
     }//GEN-LAST:event_buttonMapsActionPerformed
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+         DashboardLogin dbTrainer = new DashboardLogin();
+        dbTrainer.show();
+        dispose();
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments

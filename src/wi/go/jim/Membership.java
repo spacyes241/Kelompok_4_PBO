@@ -28,12 +28,12 @@ public class Membership extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         panelCustome2 = new Custome.PanelCustome();
-        jLabel15 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         buttonTrainGuide = new javax.swing.JButton();
         buttonMaps = new javax.swing.JButton();
         buttonSchedule = new javax.swing.JButton();
         buttonGoals = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -85,23 +85,28 @@ public class Membership extends javax.swing.JFrame {
         panelCustome2.setRoundTopLeft(40);
         panelCustome2.setRoundTopRight(40);
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setText("Diojim   |");
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton2.setText("USER");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCustome2Layout = new javax.swing.GroupLayout(panelCustome2);
         panelCustome2.setLayout(panelCustome2Layout);
         panelCustome2Layout.setHorizontalGroup(
             panelCustome2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCustome2Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addGap(50, 50, 50))
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(43, 43, 43))
         );
         panelCustome2Layout.setVerticalGroup(
             panelCustome2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCustome2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel15)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -133,16 +138,22 @@ public class Membership extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setText("LOGO");
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Logo.jpg"))); // NOI18N
+        jLabel16.setText("LOGO");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonTrainGuide)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -165,9 +176,9 @@ public class Membership extends javax.swing.JFrame {
                         .addComponent(buttonMaps)
                         .addComponent(buttonSchedule)
                         .addComponent(buttonGoals)
-                        .addComponent(jLabel5))
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
+                .addGap(23, 23, 23))
         );
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
@@ -600,7 +611,7 @@ public class Membership extends javax.swing.JFrame {
                     .addComponent(panelCustome3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelCustome8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelCustome6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 32, Short.MAX_VALUE)
+                .addGap(18, 27, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -609,31 +620,43 @@ public class Membership extends javax.swing.JFrame {
 
     private void buttonScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScheduleActionPerformed
         // TODO add your handling code here:
-        Jadwal jadwal = new Jadwal();
+        Jadwalbefore jadwal = new Jadwalbefore();
         jadwal.show();
         dispose();
     }//GEN-LAST:event_buttonScheduleActionPerformed
 
     private void buttonTrainGuideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTrainGuideActionPerformed
         // TODO add your handling code here:
-        TrainingGuide trainGuide = new TrainingGuide();
+        TrainingGuidebefore trainGuide = new TrainingGuidebefore();
         trainGuide.show();
         dispose();
     }//GEN-LAST:event_buttonTrainGuideActionPerformed
 
     private void buttonGoalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGoalsActionPerformed
         // TODO add your handling code here:
-        GoalsTest goals = new GoalsTest();
+        GoalsTestbeforlogin goals = new GoalsTestbeforlogin();
         goals.show();
         dispose();
     }//GEN-LAST:event_buttonGoalsActionPerformed
 
     private void buttonMapsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMapsActionPerformed
         // TODO add your handling code here:
-        Maps maps = new Maps();
+        Mapsbefore maps = new Mapsbefore();
         maps.show();
         dispose();
     }//GEN-LAST:event_buttonMapsActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ButtonSignUpSignIn addForm = new ButtonSignUpSignIn(Membership.this, true);
+        addForm.setVisible(true);
+          dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+          Dashboard dbTrainer = new Dashboard();
+        dbTrainer.show();
+        dispose();
+    }//GEN-LAST:event_jLabel16MouseClicked
 
     /**
      * @param args the command line arguments
@@ -676,13 +699,14 @@ public class Membership extends javax.swing.JFrame {
     private javax.swing.JButton buttonMaps;
     private javax.swing.JButton buttonSchedule;
     private javax.swing.JButton buttonTrainGuide;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -702,7 +726,6 @@ public class Membership extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

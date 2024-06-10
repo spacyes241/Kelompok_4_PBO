@@ -370,14 +370,15 @@ public class DashboardLogin extends javax.swing.JFrame {
 
     private void buttonJoinMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJoinMemberActionPerformed
         // TODO add your handling code here:
-        Membership membership = new Membership();
+        Membershipafter membership = new Membershipafter();
         membership.show();
         dispose();
     }//GEN-LAST:event_buttonJoinMemberActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+          ButtonLogout addForm = new ButtonLogout(DashboardLogin.this, true);
+    addForm.setVisible(true); 
+     dispose();     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void buttonScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScheduleActionPerformed
         // TODO add your handling code here:
