@@ -165,13 +165,16 @@ public class GoalsTest extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelCustome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(buttonTrainGuide)
-                        .addComponent(buttonMaps)
-                        .addComponent(buttonSchedule)
-                        .addComponent(buttonGoals))
-                    .addComponent(jLabel5))
-                .addGap(25, 25, 25))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(buttonTrainGuide)
+                                .addComponent(buttonMaps)
+                                .addComponent(buttonSchedule)
+                                .addComponent(buttonGoals)))
+                        .addGap(14, 14, 14)))
+                .addGap(18, 18, 18))
         );
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/young-fitness-man-studio (1).jpg"))); // NOI18N
