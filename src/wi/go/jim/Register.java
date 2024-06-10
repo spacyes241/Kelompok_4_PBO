@@ -226,7 +226,7 @@ public class Register extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Success, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                .addComponent(Success, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonSave, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
@@ -270,7 +270,7 @@ public class Register extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
                 .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -314,6 +314,11 @@ public class Register extends javax.swing.JFrame {
 
         buttonMaps.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         buttonMaps.setText("Maps");
+        buttonMaps.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMapsActionPerformed(evt);
+            }
+        });
 
         buttonSchedule.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         buttonSchedule.setText("Schedule");
@@ -499,6 +504,9 @@ public class Register extends javax.swing.JFrame {
 
     private void buttonScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonScheduleActionPerformed
         // TODO add your handling code here:
+        Jadwal jd = new Jadwal();
+        jd.show();
+        dispose();
     }//GEN-LAST:event_buttonScheduleActionPerformed
 
     private void buttonGoalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGoalsActionPerformed
@@ -510,7 +518,17 @@ public class Register extends javax.swing.JFrame {
 
     private void buttonTrainGuideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTrainGuideActionPerformed
         // TODO add your handling code here:
+        TrainingGuide guide = new TrainingGuide();
+        guide.show();
+        dispose();
     }//GEN-LAST:event_buttonTrainGuideActionPerformed
+
+    private void buttonMapsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMapsActionPerformed
+        // TODO add your handling code here:
+        Maps map = new Maps();
+        map.show();
+        dispose();
+    }//GEN-LAST:event_buttonMapsActionPerformed
 
     /**
      * @param args the command line arguments
