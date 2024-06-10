@@ -112,6 +112,11 @@ public class JadwalTrainer extends javax.swing.JFrame {
                 perbaruiDaftarButtonMouseClicked(evt);
             }
         });
+        perbaruiDaftarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perbaruiDaftarButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -413,6 +418,10 @@ public class JadwalTrainer extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void perbaruiDaftarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perbaruiDaftarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_perbaruiDaftarButtonActionPerformed
 
     /**
      * @param args the command line arguments

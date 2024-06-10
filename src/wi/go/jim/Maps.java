@@ -119,6 +119,11 @@ public class Maps extends javax.swing.JFrame {
         });
 
         buttonMaps.setText("Maps");
+        buttonMaps.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonMapsActionPerformed(evt);
+            }
+        });
 
         buttonSchedule.setText("Schedule");
         buttonSchedule.addActionListener(new java.awt.event.ActionListener() {
@@ -728,6 +733,10 @@ public class Maps extends javax.swing.JFrame {
         goals.show();
         dispose();
     }//GEN-LAST:event_buttonGoalsActionPerformed
+
+    private void buttonMapsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMapsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonMapsActionPerformed
 
     /**
      * @param args the command line arguments
