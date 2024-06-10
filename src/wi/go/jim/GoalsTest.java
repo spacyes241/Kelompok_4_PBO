@@ -398,7 +398,7 @@ public class GoalsTest extends javax.swing.JFrame {
           }//GEN-LAST:event_jLabel14PropertyChange
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        DashboardLogin dbTrainer = new DashboardLogin();
+        DashboardMember dbTrainer = new DashboardMember();
         dbTrainer.show();
         dispose();
     }//GEN-LAST:event_jLabel14MouseClicked

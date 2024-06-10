@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,6 +35,7 @@ public class Login extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     private ArrayList<User> users = new ArrayList<>();
+
     public Login() {
         initComponents();
         try {
@@ -43,8 +46,8 @@ public class Login extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }
-    
-     private void loadUsers() {
+
+    private void loadUsers() {
         try {
             String query = "SELECT * FROM dbregister";
             ResultSet rs = stmt.executeQuery(query);
@@ -61,8 +64,8 @@ public class Login extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }
-     
-     private User createUser(String email, String role) {
+
+    private User createUser(String email, String role) {
         switch (role) {
             case "Member":
                 return new Member(email);
@@ -72,7 +75,6 @@ public class Login extends javax.swing.JFrame {
                 return null;
         }
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -292,9 +294,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-    String email = EmailField.getText();
+        String email = EmailField.getText();
         String password = new String(PassField.getPassword());
-
         User user = findUserByEmail(email);
         if (user != null && authenticateUser(user, password)) {
             JOptionPane.showMessageDialog(null, "Login berhasil");
@@ -308,15 +309,15 @@ public class Login extends javax.swing.JFrame {
     private void buttonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonloginActionPerformed
         ButtonSignUpSignIn addForm = new ButtonSignUpSignIn(Login.this, true);
         addForm.setVisible(true);
-          dispose();
+        dispose();
     }//GEN-LAST:event_buttonloginActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-            Dashboard dbTrainer = new Dashboard();
+        Dashboard dbTrainer = new Dashboard();
         dbTrainer.show();
         dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
- private User findUserByEmail(String email) {
+    private User findUserByEmail(String email) {
         for (User user : users) {
             if (user.getEmail().equals(email)) {
                 return user;
@@ -324,13 +325,24 @@ public class Login extends javax.swing.JFrame {
         }
         return null;
     }
- 
- private boolean authenticateUser(User user, String password) {
-        // Implementasi autentikasi, misalnya memeriksa password di database
-        // Untuk sementara, kita anggap selalu benar
-        return true;
+
+    private boolean authenticateUser(User user, String password) {
+        try {
+            String query = "SELECT * FROM dbregister WHERE Email = ? AND Password = ?";
+            java.sql.PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, user.getEmail());
+            pst.setString(2, password);
+            // Eksekusi query
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
-    
+
     /**
      * @param args the command line arguments
      */

@@ -351,7 +351,7 @@ public class JadwalTrainer extends javax.swing.JFrame {
     }//GEN-LAST:event_perbaruiDaftarButtonMouseClicked
 
     private void editButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonMouseClicked
-        editJadwal editForm = new editJadwal(JadwalTrainer.this, true, selectedJadwalTersedia);
+        EditJadwal editForm = new EditJadwal(JadwalTrainer.this, true, selectedJadwalTersedia);
         editForm.setVisible(true);
     }//GEN-LAST:event_editButtonMouseClicked
 
@@ -380,7 +380,7 @@ public class JadwalTrainer extends javax.swing.JFrame {
     }//GEN-LAST:event_listJadwalTersediaMouseClicked
 
     private void addButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseClicked
-        addJadwal addForm = new addJadwal(JadwalTrainer.this, true);
+        AddJadwal addForm = new AddJadwal(JadwalTrainer.this, true);
         addForm.setVisible(true);
     }//GEN-LAST:event_addButtonMouseClicked
 

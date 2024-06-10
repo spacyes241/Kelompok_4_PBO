@@ -542,7 +542,7 @@ public class Jadwal extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonMapsActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-         DashboardLogin dbTrainer = new DashboardLogin();
+         DashboardMember dbTrainer = new DashboardMember();
         dbTrainer.show();
         dispose();
     }//GEN-LAST:event_jLabel5MouseClicked

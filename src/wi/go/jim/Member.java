@@ -17,9 +17,8 @@ public class Member extends User {
 
     @Override
     public void showDashboard() {
-         DashboardLogin dashboardLogin = new DashboardLogin();
+         DashboardMember dashboardLogin = new DashboardMember();
                 dashboardLogin.setVisible(true);
-
     }
 }
 
